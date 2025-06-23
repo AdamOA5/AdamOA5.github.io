@@ -1,0 +1,172 @@
+{
+  "name": "Okba Adam",
+  "email": "Adamokba02@outlook.fr",
+  "phone": "07 81 01 22 82",
+  "address": "5 Avenue Léon Blum, 93800 Épinay-sur-seine, France",
+  "languages": {
+    "fr": {
+      "title": "CV – Okba Adam",
+      "description": "Développeur et ingénieur cybersécurité en formation",
+      "skills": [
+        "HTML5/CSS",
+        "Python",
+        "OCaml",
+        "Java",
+        "C",
+        "Unix",
+        "Java Swing",
+        "OCaml unification",
+        "Client-serveur C"
+      ],
+      "soft_skills": [
+        "Rigoureux",
+        "Polyvalent",
+        "Déterminé"
+      ],
+      "interests": [
+        "Nouvelle technologie",
+        "Natation",
+        "Voyage"
+      ],
+      "langues": [
+        "Anglais (Avancé)",
+        "Japonais (Intermédiaire)",
+        "Allemand (Débutant)"
+      ],
+      "education": [
+        "Diplôme Ingénieur – Sup Galilée – 2023–2026",
+        "Licence Informatique – Institut Galilée – 2021–2023",
+        "CPGE MPSI – Lycée Gustave Monod – 2020–2021",
+        "Baccalauréat SSI – Lycée Jacques Feyder – 2020 – Mention Bien"
+      ],
+      "experience": [
+        "Stagiaire – SFR – Janvier 2016 / Février 2016"
+      ],
+      "projects": [
+        "Conception d'un jeu en Java (Swing)",
+        "Algorithmes d’unification OCaml",
+        "Client-serveur en C"
+      ],
+      "name": "Okba Adam"
+    },
+    "ja": {
+      "title": "履歴書 – オクバ・アダム",
+      "description": "サイバーセキュリティ分野での訓練中の開発者・エンジニア",
+      "skills": [
+        "HTML5/CSS",
+        "Python",
+        "OCaml",
+        "Java",
+        "C",
+        "Unix",
+        "Java Swing",
+        "OCaml 一致アルゴリズム",
+        "クライアント・サーバ C"
+      ],
+      "soft_skills": [
+        "几帳面",
+        "多才",
+        "意欲的"
+      ],
+      "interests": [
+        "新技術",
+        "水泳",
+        "旅行"
+      ],
+      "langues": [
+        "英語（上級）",
+        "日本語（中級）",
+        "ドイツ語（初級）"
+      ],
+      "education": [
+        "エンジニアディプロム – Sup Galilée – 2023–2026",
+        "情報学学士 – Institut Galilée – 2021–2023",
+        "CPGE MPSI – Gustave Monod高校 – 2020–2021",
+        "高校卒業証書 SSI – Jacques Feyder高校 – 2020 – 優良"
+      ],
+      "experience": [
+        "インターン – SFR – 2016年1月 / 2016年2月"
+      ],
+      "projects": [
+        "Java（Swing）によるゲーム設計",
+        "OCaml の一致アルゴリズム",
+        "C によるクライアント・サーバ"
+      ],
+      "name": "オクバ・アダム"
+    },
+    "de": {
+      "title": "Lebenslauf – Okba Adam",
+      "description": "Entwickler und angehender Cybersicherheitsingenieur",
+      "skills": [
+        "HTML5/CSS",
+        "Python",
+        "OCaml",
+        "Java",
+        "C",
+        "Unix",
+        "Java Swing",
+        "OCaml-Unifikation",
+        "Client-Server in C"
+      ],
+      "soft_skills": [
+        "Zuverlässig",
+        "Vielseitig",
+        "Entschlossen"
+      ],
+      "interests": [
+        "Neue Technologien",
+        "Schwimmen",
+        "Reisen"
+      ],
+      "langues": [
+        "Englisch (Fortgeschritten)",
+        "Japanisch (Mittelstufe)",
+        "Deutsch (Anfänger)"
+      ],
+      "education": [
+        "Diplom-Ingenieur – Sup Galilée – 2023–2026",
+        "Informatik-Bachelor – Institut Galilée – 2021–2023",
+        "CPGE MPSI – Lycée Gustave Monod – 2020–2021",
+        "Abitur SSI – Lycée Jacques Feyder – 2020 – Gut"
+      ],
+      "experience": [
+        "Praktikant – SFR – Januar 2016 / Februar 2016"
+      ],
+      "projects": [
+        "Entwicklung eines Spiels mit Java (Swing)",
+        "Unifikationsalgorithmen in OCaml",
+        "Client-Server-Architektur in C"
+      ],
+      "name": "Okba Adam"
+    }
+  },
+  "titles": {
+    "fr": {
+      "Compétences": "Compétences",
+      "Langues": "Langues",
+      "Soft Skills": "Soft Skills",
+      "Centres d'intérêt": "Centres d'intérêt",
+      "Formation": "Formation",
+      "Expérience professionnelle": "Expérience professionnelle",
+      "Projets informatiques": "Projets informatiques"
+    },
+    "ja": {
+      "Compétences": "スキル",
+      "Langues": "言語",
+      "Soft Skills": "ソフトスキル",
+      "Centres d'intérêt": "趣味・関心",
+      "Formation": "学歴",
+      "Expérience professionnelle": "職務経験",
+      "Projets informatiques": "情報プロジェクト"
+    },
+    "de": {
+      "Compétences": "Fähigkeiten",
+      "Langues": "Sprachen",
+      "Soft Skills": "Soft Skills",
+      "Centres d'intérêt": "Interessen",
+      "Formation": "Ausbildung",
+      "Expérience professionnelle": "Berufserfahrung",
+      "Projets informatiques": "Informatikprojekte"
+    }
+  }
+}
