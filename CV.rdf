@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:schema="http://schema.org/"
+  xml:lang="fr">
+
+  <foaf:Person rdf:about="#jean-dupont">
+    <foaf:name>Jean Dupont</foaf:name>
+    <foaf:nick>jeandup</foaf:nick>
+    <foaf:mbox rdf:resource="mailto:jean.dupont@example.com"/>
+    <foaf:homepage rdf:resource="http://www.monportfolio.fr"/>
+    <foaf:img rdf:resource="http://www.monportfolio.fr/photo.jpg"/>
+  </foaf:Person>
+
+  <rdf:Description rdf:about="http://www.monportfolio.fr/competences.rdf">
+    <dc:title>Compétences et Connaissances</dc:title>
+    <dc:creator rdf:resource="#jean-dupont"/>
+    <dc:language>fr</dc:language>
+    <dc:subject>Technologies Web Sémantique</dc:subject>
+    <dc:subject>Développement Web</dc:subject>
+    <dc:subject>Programmation</dc:subject>
+    <dc:subject>Travail en équipe</dc:subject>
+  </rdf:Description>
+
+  <schema:Person rdf:about="#jean-dupont">
+    <schema:name>Jean Dupont</schema:name>
+    <schema:url rdf:resource="http://www.monportfolio.fr"/>
+    <schema:email>jean.dupont@example.com</schema:email>
+    <schema:image rdf:resource="http://www.monportfolio.fr/photo.jpg"/>
+  </schema:Person>
+</rdf:RDF>
