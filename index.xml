@@ -11,20 +11,20 @@
   <head>
     <title>Index multilingue – Compétences et Connaissances</title>
     <meta charset="UTF-8" />
-    <link rel="alternate" type="application/rdf+xml" hreflang="fr" href="competences.php?lang=fr" />
-    <link rel="alternate" type="application/rdf+xml" hreflang="ja" href="competences.php?lang=ja" />
-    <link rel="alternate" type="application/rdf+xml" hreflang="de" href="competences.php?lang=de" />
+    <link rel="alternate" type="application/rdf+xml" hreflang="fr" href="CV.php?lang=fr" />
+    <link rel="alternate" type="application/rdf+xml" hreflang="ja" href="CV.php?lang=ja" />
+    <link rel="alternate" type="application/rdf+xml" hreflang="de" href="CV.php?lang=de" />
     <meta name="dc:title" content="Index des Compétences multilingue"/>
-    <meta name="dc:creator" content="Adam OKBA"/>
+    <meta name="dc:creator" content="Jean Dupont"/>
     <meta name="dc:language" content="fr"/>
   </head>
 
   <body>
     <h1>Compétences et Connaissances – Versions Multilingues</h1>
     <ul>
-      <li><a href="competences.php?lang=fr" hreflang="fr">Version française (RDF/XML)</a></li>
-      <li><a href="competences.php?lang=ja" hreflang="ja">日本語版 (RDF/XML)</a></li>
-      <li><a href="competences.php?lang=de" hreflang="de">Deutsche Version (RDF/XML)</a></li>
+      <li><a href="CV.php?lang=fr" hreflang="fr">Version française (RDF/XML)</a></li>
+      <li><a href="CV.php?lang=ja" hreflang="ja">日本語版 (RDF/XML)</a></li>
+      <li><a href="CV.php?lang=de" hreflang="de">Deutsche Version (RDF/XML)</a></li>
     </ul>
   </body>
 </html>
