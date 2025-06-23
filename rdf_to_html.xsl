@@ -9,11 +9,12 @@
   <xsl:template match="/">
     <html>
       <head>
-        <title>Compétences – RDF vers HTML</title>
+        <title><xsl:value-of select="//dc:title"/></title>
         <meta charset="UTF-8"/>
       </head>
       <body>
-        <h1>Compétences et Connaissances</h1>
+        <h1><xsl:value-of select="//dc:title"/></h1>
+        <p><em><xsl:value-of select="//dc:description"/></em></p>
         <h2>Auteur</h2>
         <xsl:for-each select="//foaf:Person">
           <p><strong>Nom :</strong> <xsl:value-of select="foaf:name"/></p>
