@@ -4,20 +4,21 @@
          xmlns:dc="http://purl.org/dc/terms/"
          xmlns:schema="http://schema.org/"
          xml:lang="fr">
-  <foaf:Person rdf:about="#jean-dupont">
-    <foaf:name>Jean Dupont</foaf:name>
-    <foaf:nick>jeandup</foaf:nick>
-    <foaf:mbox rdf:resource="mailto:jean.dupont@example.com"/>
+  <foaf:Person rdf:about="#okba-adam">
+    <foaf:name>Okba Adam</foaf:name>
+    <foaf:nick>okba</foaf:nick>
+    <foaf:mbox rdf:resource="mailto:okba.adam@example.com"/>
     <foaf:homepage rdf:resource="http://www.monportfolio.fr"/>
     <foaf:img rdf:resource="http://www.monportfolio.fr/photo.jpg"/>
   </foaf:Person>
   <rdf:Description rdf:about="http://www.monportfolio.fr/competences.rdf">
     <dc:title>Compétences et Connaissances</dc:title>
-    <dc:creator rdf:resource="#jean-dupont"/>
+    <dc:description>Page présentant les compétences techniques et personnelles de Okba Adam.</dc:description>
+    <dc:creator rdf:resource="#okba-adam"/>
     <dc:language>fr</dc:language>
-    <dc:subject>Technologies Web Sémantique</dc:subject>
     <dc:subject>Développement Web</dc:subject>
-    <dc:subject>Programmation</dc:subject>
+    <dc:subject>Programmation Python et Java</dc:subject>
+    <dc:subject>Web sémantique (RDF, OWL)</dc:subject>
     <dc:subject>Travail en équipe</dc:subject>
   </rdf:Description>
 </rdf:RDF>
