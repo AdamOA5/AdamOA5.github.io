@@ -1,17 +1,111 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ schema: http://schema.org/">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio RDF – Okba Adam</title>
-  <script src="js/transform.js" defer></script>
+  <title>Portfolio RDFa – Okba Adam</title>
+  <script src="js/dynamic_rdfa.js" defer></script>
 </head>
-<body>
-  <h1>Présentation RDF multilingue</h1>
-  <nav>
-    <a href="?lang=fr">FR</a> |
-    <a href="?lang=ja">JA</a> |
-    <a href="?lang=de">DE</a>
-  </nav>
-  <div id="output"></div>
+<body vocab="http://schema.org/" typeof="foaf:PersonalProfileDocument">
+  <header>
+    <h1 property="dc:title" id="title"></h1>
+    <p><span property="dc:description" id="description"></span></p>
+    <nav>
+      <a href="?lang=fr">FR</a> |
+      <a href="?lang=ja">JA</a> |
+      <a href="?lang=de">DE</a>
+    </nav>
+  </header>
+
+  <section typeof="foaf:Person" resource="#okba">
+    <h2 id="label-author"></h2>
+    <p><strong id="label-name"></strong> <span property="foaf:name" id="name"></span></p>
+    <p><strong id="label-nick"></strong> <span property="foaf:nick" id="nick"></span></p>
+    <p><strong id="label-email"></strong> <a href="#" id="email" property="foaf:mbox"></a></p>
+    <p><a href="http://www.monportfolio.fr" property="foaf:homepage">Page d'accueil</a></p>
+  </section>
+
+  <section typeof="dc:Dataset" about="#competences">
+    <h2 id="label-competences"></h2>
+    <ul id="competence-list"></ul>
+  </section>
+
+  <!-- RDF embarqués pour chaque langue -->
+  <script id="rdf-fr" type="application/rdf+xml">
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dc="http://purl.org/dc/terms/"
+             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+             xml:lang="fr">
+      <foaf:Person rdf:about="#okba-adam">
+        <foaf:name>Okba Adam</foaf:name>
+        <foaf:nick>okba</foaf:nick>
+        <foaf:mbox rdf:resource="mailto:okba.adam@example.com"/>
+      </foaf:Person>
+      <rdf:Description rdf:about="http://www.monportfolio.fr/">
+        <dc:title>Compétences et Connaissances</dc:title>
+        <dc:description>Page présentant les compétences techniques et personnelles de Okba Adam.</dc:description>
+        <dc:subject>Auteur</dc:subject>
+        <dc:subject>Nom</dc:subject>
+        <dc:subject>Pseudo</dc:subject>
+        <dc:subject>Email</dc:subject>
+        <dc:subject>Compétences</dc:subject>
+        <dc:subject>Développement Web</dc:subject>
+        <dc:subject>Programmation Python et Java</dc:subject>
+        <dc:subject>Web sémantique (RDF, OWL)</dc:subject>
+        <dc:subject>Travail en équipe</dc:subject>
+      </rdf:Description>
+    </rdf:RDF>
+  </script>
+
+  <script id="rdf-ja" type="application/rdf+xml">
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dc="http://purl.org/dc/terms/"
+             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+             xml:lang="ja">
+      <foaf:Person rdf:about="#okba-adam">
+        <foaf:name>オクバ・アダム</foaf:name>
+        <foaf:nick>おくば</foaf:nick>
+        <foaf:mbox rdf:resource="mailto:okba.adam@example.com"/>
+      </foaf:Person>
+      <rdf:Description rdf:about="http://www.monportfolio.fr/">
+        <dc:title>スキルと知識</dc:title>
+        <dc:description>オクバ・アダムの技術的および個人的なスキルを紹介するページ。</dc:description>
+        <dc:subject>作成者</dc:subject>
+        <dc:subject>名前</dc:subject>
+        <dc:subject>ニックネーム</dc:subject>
+        <dc:subject>メールアドレス</dc:subject>
+        <dc:subject>スキル</dc:subject>
+        <dc:subject>ウェブ開発</dc:subject>
+        <dc:subject>PythonとJavaによるプログラミング</dc:subject>
+        <dc:subject>セマンティックウェブ（RDF, OWL）</dc:subject>
+        <dc:subject>チームワーク</dc:subject>
+      </rdf:Description>
+    </rdf:RDF>
+  </script>
+
+  <script id="rdf-de" type="application/rdf+xml">
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dc="http://purl.org/dc/terms/"
+             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+             xml:lang="de">
+      <foaf:Person rdf:about="#okba-adam">
+        <foaf:name>Okba Adam</foaf:name>
+        <foaf:nick>okba</foaf:nick>
+        <foaf:mbox rdf:resource="mailto:okba.adam@example.com"/>
+      </foaf:Person>
+      <rdf:Description rdf:about="http://www.monportfolio.fr/">
+        <dc:title>Fähigkeiten und Kenntnisse</dc:title>
+        <dc:description>Seite mit technischen und persönlichen Fähigkeiten von Okba Adam.</dc:description>
+        <dc:subject>Autor</dc:subject>
+        <dc:subject>Name</dc:subject>
+        <dc:subject>Spitzname</dc:subject>
+        <dc:subject>E-Mail</dc:subject>
+        <dc:subject>Fähigkeiten</dc:subject>
+        <dc:subject>Webentwicklung</dc:subject>
+        <dc:subject>Programmierung in Python und Java</dc:subject>
+        <dc:subject>Semantisches Web (RDF, OWL)</dc:subject>
+        <dc:subject>Teamarbeit</dc:subject>
+      </rdf:Description>
+    </rdf:RDF>
+  </script>
 </body>
 </html>
