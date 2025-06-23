@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de" prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ schema: http://schema.org/">
+<head>
+  <meta charset="UTF-8" />
+  <title property="dc:title">Fähigkeiten und Kenntnisse – Okba Adam</title>
+</head>
+<body vocab="http://schema.org/" typeof="foaf:PersonalProfileDocument">
+
+  <header>
+    <h1 property="dc:title">Fähigkeiten und Kenntnisse</h1>
+    <p property="dc:description">Seite mit technischen und persönlichen Fähigkeiten von Okba Adam.</p>
+    <p><a href="index.html">FR</a> | <a href="index_ja.html">JA</a> | <a href="index_de.html">DE</a></p>
+  </header>
+
+  <section typeof="foaf:Person" resource="#okba">
+    <h2>Autor</h2>
+    <p><strong>Name:</strong> <span property="foaf:name">Okba Adam</span></p>
+    <p><strong>Spitzname:</strong> <span property="foaf:nick">okba</span></p>
+    <p><strong>E-Mail:</strong> <a href="mailto:okba.adam@example.com" property="foaf:mbox">okba.adam@example.com</a></p>
+    <p><a href="http://www.monportfolio.fr" property="foaf:homepage">Startseite</a></p>
+  </section>
+
+  <section typeof="dc:Dataset" about="#competences">
+    <h2>Fähigkeiten</h2>
+    <ul>
+      <li property="dc:subject">Webentwicklung</li>
+      <li property="dc:subject">Programmierung in Python und Java</li>
+      <li property="dc:subject">Semantisches Web (RDF, OWL)</li>
+      <li property="dc:subject">Teamarbeit</li>
+    </ul>
+  </section>
+
+</body>
+</html>
