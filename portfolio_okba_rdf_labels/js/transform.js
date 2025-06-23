@@ -1,16 +1,11 @@
-async function loadRDF(lang = 'fr') {
-  const rdfMap = {
-    fr: 'competences.rdf',
-    ja: 'competences_ja.rdf',
-    de: 'competences_de.rdf'
-  };
-  const rdfFile = rdfMap[lang] || rdfMap['fr'];
-  const res = await fetch(rdfFile);
-  const xmlText = await res.text();
-  const parser = new DOMParser();
-  const xml = parser.parseFromString(xmlText, "application/xml");
+window.onload = () => {
+  const lang = new URLSearchParams(window.location.search).get("lang") || "fr";
+  const rdfScript = document.getElementById("rdf-" + lang);
+  if (!rdfScript) return;
 
-  // Données principales
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(rdfScript.textContent, "application/xml");
+
   document.getElementById("title").textContent = xml.querySelector("dc\\:title")?.textContent || "";
   document.getElementById("description").textContent = xml.querySelector("dc\\:description")?.textContent || "";
   document.getElementById("name").textContent = xml.querySelector("foaf\\:name")?.textContent || "";
@@ -22,7 +17,6 @@ async function loadRDF(lang = 'fr') {
     email.textContent = mbox.replace("mailto:", "");
   }
 
-  // Libellés
   const subjects = xml.querySelectorAll("dc\\:subject");
   if (subjects.length >= 5) {
     document.getElementById("label-author").textContent = subjects[0].textContent;
@@ -32,7 +26,6 @@ async function loadRDF(lang = 'fr') {
     document.getElementById("label-competences").textContent = subjects[4].textContent;
   }
 
-  // Compétences
   const compList = document.getElementById("competence-list");
   compList.innerHTML = "";
   for (let i = 5; i < subjects.length; i++) {
@@ -41,10 +34,4 @@ async function loadRDF(lang = 'fr') {
     li.setAttribute("property", "dc:subject");
     compList.appendChild(li);
   }
-}
-
-window.onload = () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const lang = urlParams.get("lang") || "fr";
-  loadRDF(lang);
 };
