@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ schema: http://schema.org/">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio RDFa – Okba Adam</title>
+  <script src="js/dynamic_rdfa.js" defer></script>
+  <link rel="alternate" hreflang="fr" href="?lang=fr" />
+  <link rel="alternate" hreflang="ja" href="?lang=ja" />
+  <link rel="alternate" hreflang="de" href="?lang=de" />
+</head>
+<body vocab="http://schema.org/" typeof="foaf:PersonalProfileDocument">
+  <header>
+    <h1 property="dc:title" id="title"></h1>
+    <p><span property="dc:description" id="description"></span></p>
+    <nav>
+      <a href="?lang=fr">FR</a> |
+      <a href="?lang=ja">JA</a> |
+      <a href="?lang=de">DE</a>
+    </nav>
+  </header>
+
+  <section typeof="foaf:Person" resource="#okba">
+    <h2 id="label-author"></h2>
+    <p><strong id="label-name"></strong> <span property="foaf:name" id="name"></span></p>
+    <p><strong id="label-nick"></strong> <span property="foaf:nick" id="nick"></span></p>
+    <p><strong id="label-email"></strong> <a href="#" id="email" property="foaf:mbox"></a></p>
+    <p><a href="http://www.monportfolio.fr" property="foaf:homepage">Page d'accueil</a></p>
+  </section>
+
+  <section typeof="dc:Dataset" about="#competences">
+    <h2 id="label-competences"></h2>
+    <ul id="competence-list">
+      <!-- compétences dynamiques -->
+    </ul>
+  </section>
+</body>
+</html>
