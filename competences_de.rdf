@@ -3,13 +3,21 @@
          xmlns:dc="http://purl.org/dc/terms/"
          xmlns:foaf="http://xmlns.com/foaf/0.1/"
          xml:lang="de">
+  <foaf:Person rdf:about="#okba-adam">
+    <foaf:name>Okba Adam</foaf:name>
+    <foaf:nick>okba</foaf:nick>
+    <foaf:mbox rdf:resource="mailto:okba.adam@example.com"/>
+    <foaf:homepage rdf:resource="http://www.monportfolio.fr"/>
+    <foaf:img rdf:resource="http://www.monportfolio.fr/photo.jpg"/>
+  </foaf:Person>
   <rdf:Description rdf:about="http://www.monportfolio.fr/competences_de.rdf">
     <dc:title>Fähigkeiten und Kenntnisse</dc:title>
-    <dc:creator rdf:resource="http://www.monportfolio.fr#jean-dupont" />
+    <dc:description>Seite mit technischen und persönlichen Fähigkeiten von Okba Adam.</dc:description>
+    <dc:creator rdf:resource="#okba-adam"/>
     <dc:language>de</dc:language>
-    <dc:subject>Semantische Webtechnologien</dc:subject>
     <dc:subject>Webentwicklung</dc:subject>
-    <dc:subject>Programmierung</dc:subject>
+    <dc:subject>Programmierung in Python und Java</dc:subject>
+    <dc:subject>Semantisches Web (RDF, OWL)</dc:subject>
     <dc:subject>Teamarbeit</dc:subject>
   </rdf:Description>
 </rdf:RDF>
