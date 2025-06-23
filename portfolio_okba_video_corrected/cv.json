@@ -95,8 +95,8 @@
       "name": "オクバ・アダム"
     },
     "en": {
-      "title": "Lebenslauf – Okba Adam",
-      "description": "Entwickler und angehender Cybersicherheitsingenieur",
+      "title": "CV – Okba Adam",
+      "description": "Developer and aspiring cybersecurity engineer",
       "skills": [
         "HTML5/CSS",
         "Python",
@@ -105,37 +105,37 @@
         "C",
         "Unix",
         "Java Swing",
-        "OCaml-Unifikation",
+        "OCaml unification",
         "Client-Server in C"
       ],
       "soft_skills": [
-        "Zuverlässig",
-        "Vielseitig",
-        "Entschlossen"
+        "Reliable",
+        "Versatile",
+        "Determined"
       ],
       "interests": [
-        "Neue Technologien",
-        "Schwimmen",
-        "Reisen"
+        "New technologies",
+        "To swim",
+        "Travel"
       ],
       "langues": [
-        "Englisch (Fortgeschritten)",
-        "Japanisch (Mittelstufe)",
-        "Deutsch (Anfänger)"
+        "English (Advanced)",
+        "Japanese (Intermediate)",
+        "German (Beginner)"
       ],
       "education": [
-        "Diplom-Ingenieur – Sup Galilée – 2023–2026",
-        "Informatik-Bachelor – Institut Galilée – 2021–2023",
+        "Graduate engineer – Sup Galilée – 2023–2026",
+        "Bachelor of Computer Science – Institut Galilée – 2021–2023",
         "CPGE MPSI – Lycée Gustave Monod – 2020–2021",
         "Abitur SSI – Lycée Jacques Feyder – 2020 – Gut"
       ],
       "experience": [
-        "Praktikant – SFR – Januar 2016 / Februar 2016"
+        "Intern – SFR – Januar 2016 / Februar 2016"
       ],
       "projects": [
-        "Entwicklung eines Spiels mit Java (Swing)",
-        "Unifikationsalgorithmen in OCaml",
-        "Client-Server-Architektur in C"
+        "Developing a game with Java (Swing)",
+        "Unification algorithms in OCaml",
+        "Client-server architecture in C"
       ],
       "name": "Okba Adam"
     }
