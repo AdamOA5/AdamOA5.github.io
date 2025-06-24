@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/">
+<html lang="fr" prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ schema: http://schema.org/">
 <head>
   <meta charset="UTF-8" />
   <title property="dc:title">CV – Okba Adam</title>
@@ -7,67 +7,76 @@
   <script src="js/load_cv.js" defer></script>
 </head>
 
-<nav>
-  <a href="?lang=fr">Français</a> |
-  <a href="?lang=ja">日本語</a> |
-  <a href="?lang=en">English</a>
-</nav>
+<body vocab="http://schema.org/" typeof="schema:Person" about="#me">
+  <nav>
+    <a href="?lang=fr">Français</a> |
+    <a href="?lang=ja">日本語</a> |
+    <a href="?lang=en">English</a>
+  </nav>
 
-<body vocab="http://schema.org/" typeof="foaf:PersonalProfileDocument">
   <header>
-    <h1 id="name" property="foaf:name">Okba Adam</h1>
-    <p id="description" property="dc:description"></p>
-    <p><strong>Email:</strong> <a href="mailto:" id="email" property="foaf:mbox"></a></p>
-    <p><strong>Téléphone:</strong> <span id="phone"></span></p>
-    <p><strong>Adresse:</strong> <span id="address"></span></p>
+    <h1 id="name" property="foaf:name schema:name">Okba Adam</h1>
+    <p id="description" property="dc:description schema:description"></p>
+    <p><strong>Email:</strong> <a href="mailto:" id="email" property="foaf:mbox schema:email"></a></p>
+    <p><strong>Téléphone:</strong> <span id="phone" property="schema:telephone"></span></p>
+    <p><strong>Adresse:</strong> <span id="address" property="schema:address"></span></p>
   </header>
 
-  <section>
+  <section typeof="schema:EducationalOccupationalProgram">
     <h2 id="title-skills">Compétences</h2>
     <ul id="skills"></ul>
   </section>
 
-  <section>
+  <section typeof="schema:Person">
     <h2 id="title-langues">Langues</h2>
     <ul id="langues"></ul>
   </section>
 
   <section>
     <h2 id="title-soft">Soft Skills</h2>
-    <ul id="soft_skills"></ul>
+    <ul id="soft_skills">
+      <!-- chaque soft skill peut être annotée avec schema:role ou schema:hasSkill -->
+    </ul>
   </section>
 
   <section>
     <h2 id="title-interests">Centres d'intérêt</h2>
-    <ul id="interests"></ul>
+    <ul id="interests">
+      <!-- chaque intérêt peut être property="schema:interest" -->
+    </ul>
   </section>
 
-  <section>
+  <section typeof="schema:EducationalOccupationalCredential">
     <h2 id="title-edu">Formation</h2>
     <ul id="education"></ul>
   </section>
 
   <section>
     <h2 id="title-exp">Expérience professionnelle</h2>
-    <ul id="experience"></ul>
+    <ul id="experience">
+      <!-- chaque expérience peut être une occupation -->
+    </ul>
   </section>
 
   <section>
     <h2 id="title-proj">Projets informatiques</h2>
-    <ul id="projects"></ul>
+    <ul id="projects">
+      <!-- chaque projet peut être property="schema:Project" si détaillé -->
+    </ul>
   </section>
 
-<section>
-  <h2 id="title-video">Présentation vidéo</h2>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-    <iframe id="video-frame" src=""
-            title="Vidéo de présentation"
-            allowfullscreen
-            style="position:absolute;top:0;left:0;width:100%;height:100%;">
-    </iframe>
-  </div>
-</section>
-
+  <section>
+    <h2 id="title-video" property="schema:name">Présentation vidéo</h2>
+    <div resource="https://www.youtube.com/watch?v=pe_ejTiIcSs" typeof="schema:VideoObject">
+      <meta property="schema:name" content="Présentation de Okba Adam"/>
+      <meta property="schema:inLanguage" content="fr"/>
+      <iframe id="video-frame" property="schema:contentUrl"
+              src="https://www.youtube.com/embed/pe_ejTiIcSs"
+              title="Vidéo de présentation" allowfullscreen
+              style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      </iframe>
+    </div>
+  </section>
 </body>
 
 </html>
