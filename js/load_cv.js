@@ -1,6 +1,4 @@
-
 document.addEventListener("DOMContentLoaded", async () => {
-  
   let lang = new URLSearchParams(location.search).get("lang");
   if (!lang) {
     const browserLang = navigator.language || navigator.userLanguage;
@@ -37,26 +35,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("title-edu").textContent = t["Formation"];
   document.getElementById("title-exp").textContent = t["Expérience professionnelle"];
   document.getElementById("title-proj").textContent = t["Projets informatiques"];
-});
 
-
-  // Mise à jour du titre de la vidéo
+  // ✅ Mise à jour du titre vidéo
   const videoTitles = {
-    fr: "Présentation",
-    ja: "プレゼンテーション",
-    en: "Presentation"
+    fr: "Présentation vidéo",
+    ja: "ビデオ紹介",
+    en: "Video introduction"
   };
-  document.getElementById("title-video").textContent = videoTitles[lang];
+  document.querySelectorAll("#title-video").forEach(el => el.textContent = videoTitles[lang]);
 
-  // Affiche uniquement la vidéo de la bonne langue
+  // ✅ Affiche la vidéo correspondante (ancienne section)
   document.querySelectorAll("iframe[id^='video-']").forEach(vid => vid.style.display = "none");
   const currentVideo = document.getElementById("video-" + lang);
   if (currentVideo) currentVideo.style.display = "block";
 
-
+  // ✅ Option : ou bien, active l’iframe unique (nouvelle section)
   const iframe = document.getElementById("video-frame");
   if (iframe) {
-    const langMap = { fr: "fr", ja: "ja", en: "en" };
-    const ytUrl = "https://www.youtube.com/embed/pe_ejTiIcSs";
+    const ytUrl = "https://www.youtube.com/embed/pe_ejTiIcSs"; // ou selon langue si besoin
     iframe.src = ytUrl;
   }
+});
