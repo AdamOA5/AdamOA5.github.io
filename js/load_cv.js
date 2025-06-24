@@ -57,9 +57,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const iframe = document.getElementById("video-frame");
   if (iframe) {
     const langMap = { fr: "fr", ja: "ja", en: "en" };
-    const ytUrl = "https://www.youtube.com/embed/pe_ejTiIcSs" +
-      "?hl=" + langMap[lang] +
-      "&cc_lang_pref=" + langMap[lang] +
-      "&cc_load_policy=1";
+    const ytUrl = "https://www.youtube.com/embed/pe_ejTiIcSs";
     iframe.src = ytUrl;
   }
