@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let lang = new URLSearchParams(location.search).get("lang");
   if (!lang) {
     const browserLang = navigator.language || navigator.userLanguage;
-    lang = browserLang.startsWith("ja") ? "ja" : browserLang.startsWith("de") ? "de" : "fr";
+    lang = browserLang.startsWith("ja") ? "ja" : browserLang.startsWith("en") ? "en" : "fr";
     window.history.replaceState(null, "", "?lang=" + lang);
   }
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("title-exp").textContent = t["Expérience professionnelle"];
   document.getElementById("title-proj").textContent = t["Projets informatiques"];
 
-  // ✅ Mise à jour du titre vidéo
+  // Titre de la vidéo localisé
   const videoTitles = {
     fr: "Présentation vidéo",
     ja: "ビデオ紹介",
@@ -44,15 +44,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
   document.querySelectorAll("#title-video").forEach(el => el.textContent = videoTitles[lang]);
 
-  // ✅ Affiche la vidéo correspondante (ancienne section)
-  document.querySelectorAll("iframe[id^='video-']").forEach(vid => vid.style.display = "none");
-  const currentVideo = document.getElementById("video-" + lang);
-  if (currentVideo) currentVideo.style.display = "block";
+  // 🎥 Choix de l’URL de la vidéo en fonction de la langue
+  const videoUrls = {
+    fr: "https://www.youtube.com/embed/pe_ejTiIcSs",         // Français
+    ja: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=ja",       // Japonais
+    en: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=en"        // Anglais
+  };
 
-  // ✅ Option : ou bien, active l’iframe unique (nouvelle section)
   const iframe = document.getElementById("video-frame");
-  if (iframe) {
-    const ytUrl = "https://www.youtube.com/embed/pe_ejTiIcSs"; // ou selon langue si besoin
-    iframe.src = ytUrl;
+  if (iframe && videoUrls[lang]) {
+    iframe.src = videoUrls[lang];
   }
 });
