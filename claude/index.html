@@ -362,19 +362,17 @@
         document.getElementById("address-label").textContent = labels[currentLang].address;
       }
 
-      // Charger la vidéo
+      const videoUrls = {
+        fr: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=fr",         // Français
+        ja: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=ja",       // Japonais
+        en: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=en"        // Anglais
+      };
+    
       const iframe = document.getElementById("video-frame");
-      if (iframe) {
-        if (fr) {
-          iframe.src = "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=fr";
-        }
-        if (en) {
-          iframe.src = "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=en";
-        }
-        else {
-          iframe.src = "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=jp";
-        }
+      if (iframe && videoUrls[lang]) {
+        iframe.src = videoUrls[lang];
       }
+      });
 
       console.log('Interface mise à jour avec succès');
     }
