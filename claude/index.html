@@ -365,7 +365,15 @@
       // Charger la vidéo
       const iframe = document.getElementById("video-frame");
       if (iframe) {
-        iframe.src = "https://www.youtube.com/embed/pe_ejTiIcSs";
+        if (fr) {
+          iframe.src = "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=fr";
+        }
+        if (en) {
+          iframe.src = "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=en";
+        }
+        else {
+          iframe.src = "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=jp";
+        }
       }
 
       console.log('Interface mise à jour avec succès');
