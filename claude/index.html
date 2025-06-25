@@ -59,9 +59,6 @@
   </nav>
 
   <div id="loading" class="loading">Chargement des données...</div>
-  <div id="error" class="error" style="display:none;">
-    Erreur lors du chargement des données. Utilisation des données par défaut.
-  </div>
 
   <div id="content" style="display:none;">
     <header>
@@ -369,7 +366,7 @@
       };
     
       const iframe = document.getElementById("video-frame");
-      if (iframe && videoUrls[lang]) {
+      if (iframe) {
         iframe.src = videoUrls[lang];
       }
 
