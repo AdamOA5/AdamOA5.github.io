@@ -2,453 +2,119 @@
 <html lang="fr" prefix="dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title property="dc:title">CV – Okba Adam</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      color: #333;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background: #f9f9f9;
+      color: #222;
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+    h1, h2 {
+      color: #005a9c;
     }
-
-    /* Navigation */
-    nav {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      border-radius: 50px;
+    section {
       margin-bottom: 2rem;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-
+    ul {
+      list-style: square;
+      margin-left: 1.5rem;
+    }
+    nav {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: #e0e0e0;
+      border-radius: 5px;
+    }
     nav a {
       text-decoration: none;
-      color: #667eea;
-      font-weight: 600;
-      margin: 0 15px;
-      padding: 8px 16px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      display: inline-block;
+      color: #005a9c;
+      font-weight: bold;
+      margin: 0 10px;
+      cursor: pointer;
     }
-
     nav a:hover {
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    }
-
-    /* Messages de statut */
-    .loading, .error {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      margin: 2rem auto;
-      max-width: 400px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
-
-    .loading {
-      color: #667eea;
-      font-style: italic;
-      font-size: 1.1rem;
-    }
-
-    .error {
-      color: #e74c3c;
-      background: rgba(231, 76, 60, 0.1);
-      border: 2px solid rgba(231, 76, 60, 0.3);
-    }
-
-    /* Contenu principal */
-    #content {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 3rem;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    /* En-tête */
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid rgba(102, 126, 234, 0.2);
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    #description {
-      font-size: 1.3rem;
-      color: #666;
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: rgba(102, 126, 234, 0.1);
-      border-radius: 25px;
-      font-size: 0.9rem;
-    }
-
-    .contact-item strong {
-      color: #667eea;
-    }
-
-    .contact-item a {
-      color: #667eea;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .contact-item a:hover {
       text-decoration: underline;
     }
-
-    /* Sections */
-    section {
-      margin-bottom: 2.5rem;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: #667eea;
-      margin-bottom: 1.5rem;
+    .loading {
       text-align: center;
-      position: relative;
-      font-weight: 600;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      border-radius: 2px;
-    }
-
-    /* Listes */
-    ul {
-      list-style: none;
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    li {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      border-left: 4px solid #667eea;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    li:hover {
-      transform: translateX(5px);
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    li::before {
-      content: '▶';
-      color: #667eea;
-      font-size: 0.8rem;
-      margin-right: 0.5rem;
-    }
-
-    /* Grille responsive pour les compétences */
-    #skills, #soft_skills, #interests, #langues {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    /* Section vidéo */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      margin-top: 1rem;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 15px;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-
-    section:nth-child(1) { animation-delay: 0.1s; }
-    section:nth-child(2) { animation-delay: 0.2s; }
-    section:nth-child(3) { animation-delay: 0.3s; }
-    section:nth-child(4) { animation-delay: 0.4s; }
-    section:nth-child(5) { animation-delay: 0.5s; }
-    section:nth-child(6) { animation-delay: 0.6s; }
-    section:nth-child(7) { animation-delay: 0.7s; }
-    section:nth-child(8) { animation-delay: 0.8s; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        padding: 10px;
-      }
-
-      #content {
-        padding: 2rem 1.5rem;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      #description {
-        font-size: 1.1rem;
-      }
-
-      .contact-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      nav {
-        padding: 1rem;
-      }
-
-      nav a {
-        margin: 0.5rem;
-        display: block;
-      }
-
-      ul {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 1.5rem;
-      }
-    }
-
-    /* Effet de particules en arrière-plan */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .particle {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: float 20s infinite linear;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-      }
+      color: #666;
+      font-style: italic;
     }
   </style>
 </head>
 
 <body vocab="http://schema.org/" typeof="foaf:PersonalProfileDocument">
-  <!-- Particules d'arrière-plan -->
-  <div class="particles" id="particles"></div>
+  <nav>
+    <a href="javascript:void(0)" onclick="loadLanguage('fr')">Français</a> |
+    <a href="javascript:void(0)" onclick="loadLanguage('ja')">日本語</a> |
+    <a href="javascript:void(0)" onclick="loadLanguage('en')">English</a>
+  </nav>
 
-  <div class="container">
-    <nav>
-      <a href="javascript:void(0)" onclick="loadLanguage('fr')">🇫🇷 Français</a>
-      <a href="javascript:void(0)" onclick="loadLanguage('ja')">🇯🇵 日本語</a>
-      <a href="javascript:void(0)" onclick="loadLanguage('en')">🇬🇧 English</a>
-    </nav>
+  <div id="loading" class="loading">Chargement des données...</div>
+  <div id="error" class="error" style="display:none;">
+  </div>
 
-    <div id="loading" class="loading">
-      <div>✨ Chargement des données...</div>
-    </div>
-    
-    <div id="error" class="error" style="display:none;">
-      ⚠️ Erreur lors du chargement des données
-    </div>
+  <div id="content" style="display:none;">
+    <header>
+      <h1 id="name" property="foaf:name">Okba Adam</h1>
+      <p id="description" property="dc:description"></p>
+      <p><strong id="email-label">Email:</strong> <a href="mailto:" id="email" property="foaf:mbox"></a></p>
+      <p><strong id="phone-label">Téléphone:</strong> <span id="phone"></span></p>
+      <p><strong id="address-label">Adresse:</strong> <span id="address"></span></p>
+    </header>
 
-    <div id="content" style="display:none;">
-      <header>
-        <h1 id="name" property="foaf:name">Okba Adam</h1>
-        <p id="description" property="dc:description"></p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <strong id="email-label">📧 Email:</strong>
-            <a href="mailto:" id="email" property="foaf:mbox"></a>
-          </div>
-          <div class="contact-item">
-            <strong id="phone-label">📱 Téléphone:</strong>
-            <span id="phone"></span>
-          </div>
-          <div class="contact-item">
-            <strong id="address-label">📍 Adresse:</strong>
-            <span id="address"></span>
-          </div>
-        </div>
-      </header>
+    <section>
+      <h2 id="title-skills">Compétences</h2>
+      <ul id="skills"></ul>
+    </section>
 
-      <section>
-        <h2 id="title-skills">💻 Compétences</h2>
-        <ul id="skills"></ul>
-      </section>
+    <section>
+      <h2 id="title-langues">Langues</h2>
+      <ul id="langues"></ul>
+    </section>
 
-      <section>
-        <h2 id="title-langues">🌍 Langues</h2>
-        <ul id="langues"></ul>
-      </section>
+    <section>
+      <h2 id="title-soft">Soft Skills</h2>
+      <ul id="soft_skills"></ul>
+    </section>
 
-      <section>
-        <h2 id="title-soft">✨ Soft Skills</h2>
-        <ul id="soft_skills"></ul>
-      </section>
+    <section>
+      <h2 id="title-interests">Centres d'intérêt</h2>
+      <ul id="interests"></ul>
+    </section>
 
-      <section>
-        <h2 id="title-interests">🎯 Centres d'intérêt</h2>
-        <ul id="interests"></ul>
-      </section>
+    <section>
+      <h2 id="title-edu">Formation</h2>
+      <ul id="education"></ul>
+    </section>
 
-      <section>
-        <h2 id="title-edu">🎓 Formation</h2>
-        <ul id="education"></ul>
-      </section>
+    <section>
+      <h2 id="title-exp">Expérience professionnelle</h2>
+      <ul id="experience"></ul>
+    </section>
 
-      <section>
-        <h2 id="title-exp">💼 Expérience professionnelle</h2>
-        <ul id="experience"></ul>
-      </section>
+    <section>
+      <h2 id="title-proj">Projets informatiques</h2>
+      <ul id="projects"></ul>
+    </section>
 
-      <section>
-        <h2 id="title-proj">🚀 Projets informatiques</h2>
-        <ul id="projects"></ul>
-      </section>
-
-      <section>
-        <h2 id="title-video">🎥 Présentation vidéo</h2>
-        <div class="video-container">
-          <iframe id="video-frame" src=""
-                  title="Vidéo de présentation"
-                  allowfullscreen>
-          </iframe>
-        </div>
-      </section>
-    </div>
+    <section>
+      <h2 id="title-video">Présentation vidéo</h2>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+        <iframe id="video-frame" src=""
+                title="Vidéo de présentation"
+                allowfullscreen
+                style="position:absolute;top:0;left:0;width:100%;height:100%;">
+        </iframe>
+      </div>
+    </section>
   </div>
 
   <script>
     let currentLang = 'fr';
     let cvData = null;
     let isUsingFallback = false;
-
-    // Créer les particules d'arrière-plan
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = 20;
-      
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        
-        const size = Math.random() * 4 + 2;
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-        
-        particlesContainer.appendChild(particle);
-      }
-    }
 
     // Fonction pour afficher/masquer les éléments de l'interface
     function showLoading() {
@@ -666,32 +332,32 @@
       document.getElementById("projects").innerHTML = d.projects.map(s => `<li>${escapeHtml(s)}</li>`).join("");
 
       // Titres des sections
-      document.getElementById("title-skills").innerHTML = `💻 ${t["Compétences"]}`;
-      document.getElementById("title-langues").innerHTML = `🌍 ${t["Langues"]}`;
-      document.getElementById("title-soft").innerHTML = `✨ ${t["Soft Skills"]}`;
-      document.getElementById("title-interests").innerHTML = `🎯 ${t["Centres d'intérêt"]}`;
-      document.getElementById("title-edu").innerHTML = `🎓 ${t["Formation"]}`;
-      document.getElementById("title-exp").innerHTML = `💼 ${t["Expérience professionnelle"]}`;
-      document.getElementById("title-proj").innerHTML = `🚀 ${t["Projets informatiques"]}`;
-      document.getElementById("title-video").innerHTML = `🎥 ${t["Présentation vidéo"]}`;
+      document.getElementById("title-skills").textContent = t["Compétences"];
+      document.getElementById("title-langues").textContent = t["Langues"];
+      document.getElementById("title-soft").textContent = t["Soft Skills"];
+      document.getElementById("title-interests").textContent = t["Centres d'intérêt"];
+      document.getElementById("title-edu").textContent = t["Formation"];
+      document.getElementById("title-exp").textContent = t["Expérience professionnelle"];
+      document.getElementById("title-proj").textContent = t["Projets informatiques"];
+      document.getElementById("title-video").textContent = t["Présentation vidéo"];
 
       // Labels traduits
       const labels = {
-        fr: { email: "📧 Email:", phone: "📱 Téléphone:", address: "📍 Adresse:" },
-        ja: { email: "📧 メール:", phone: "📱 電話:", address: "📍 住所:" },
-        en: { email: "📧 Email:", phone: "📱 Phone:", address: "📍 Address:" }
+        fr: { email: "Email:", phone: "Téléphone:", address: "Adresse:" },
+        ja: { email: "メール:", phone: "電話:", address: "住所:" },
+        en: { email: "Email:", phone: "Phone:", address: "Address:" }
       };
       
       if (labels[currentLang]) {
-        document.getElementById("email-label").innerHTML = labels[currentLang].email;
-        document.getElementById("phone-label").innerHTML = labels[currentLang].phone;
-        document.getElementById("address-label").innerHTML = labels[currentLang].address;
+        document.getElementById("email-label").textContent = labels[currentLang].email;
+        document.getElementById("phone-label").textContent = labels[currentLang].phone;
+        document.getElementById("address-label").textContent = labels[currentLang].address;
       }
 
       const videoUrls = {
-        fr: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=fr",
-        ja: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=ja",
-        en: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=en"
+        fr: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=fr",         // Français
+        ja: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=ja",       // Japonais
+        en: "https://www.youtube.com/embed/pe_ejTiIcSs?cc_load_policy=1&cc_lang_pref=en"        // Anglais
       };
     
       const iframe = document.getElementById("video-frame");
@@ -720,9 +386,6 @@
     // Initialisation
     document.addEventListener("DOMContentLoaded", async () => {
       console.log('Initialisation de l\'application...');
-      
-      // Créer les particules d'arrière-plan
-      createParticles();
       
       showLoading();
       
@@ -753,6 +416,15 @@
         console.error('Erreur lors de l\'initialisation:', error);
         showError();
       }
+    });
+
+    // Gestion des erreurs globales
+    window.addEventListener('error', function(e) {
+      console.error('Erreur JavaScript:', e.error);
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+      console.error('Promesse rejetée:', e.reason);
     });
   </script>
 </body>
