@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cv.xsl"?>
+<!DOCTYPE cv SYSTEM "cv.dtd">
+<cv>
+  <name>Okba Adam</name>
+  <email>Adamokba02@outlook.fr</email>
+  <phone>07 81 01 22 82</phone>
+  <address>5 Avenue Léon Blum, 93800 Épinay-sur-seine, France</address>
+  <!-- ... contenu raccourci pour lisibilité, voir fichier original généré ... -->
+</cv>
